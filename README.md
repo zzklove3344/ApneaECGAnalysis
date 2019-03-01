@@ -14,6 +14,8 @@ If you use these modules in a research project, please consider citing it:
 
 [![DOI](https://zenodo.org/badge/160779517.svg)](https://zenodo.org/badge/latestdoi/160779517)
 
+https://zenodo.org/badge/latestdoi/55516257
+
 If you use these modules in any other project, please refer to MIT open-source license.
 
 ## Dependencies
