@@ -9,6 +9,11 @@ Then you must set two basic variable in constant.py, **APNEA_ECG_DATABASE_PATH**
 ## Author
 * zzklove3344 (Heilongjiang University), if you have any questions about codes, please contact zzklove3344@hotmail.com
 
+## Citation information
+If you use these modules in a research project, please consider citing it:
+[![DOI](https://zenodo.org/badge/160779517.svg)](https://zenodo.org/badge/latestdoi/160779517)
+
+If you use these modules in any other project, please refer to MIT open-source license.
 
 ## Dependencies
 * wfdb
