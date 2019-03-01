@@ -39,6 +39,7 @@ SEGMENTS_NUMBER_TEST = 17268
 r""" relating to acf """
 # ACF vector length
 ACF_LAGS = 13
+NOISE_THRESHOLD = 0.8
 
 r""" relating to wavelet decomposition """
 WAVELET_NAME = "sym8"
@@ -53,3 +54,10 @@ R_PEAKS_PLOT_DIR = "D:/Apnea Analysis pic/QRS detection/"
 RR_INTERVALS_DIR = "D:/Apnea Analysis features/RR intervals/"
 # folder for storing plot of RRI
 RR_INTERVALS_PLOT_DIR = "D:/Apnea Analysis pic/RR intervals/"
+
+
+r""" relating to time-frequency representation(tfr) """
+# The minimum frequency
+FMIN = 0
+#  The maximum frequency
+FMAX = 1000
