@@ -1,7 +1,8 @@
 """
 	Compute autocorrelation function vector.
 	
-	When you run function screen_segments_acf, it will consume about four hours per 10 thousands ecg segments.
+	Note:
+		When you run function screen_segments_acf, it will consume about four hours per 10 thousands ecg segments.
 """
 
 import numpy as np
