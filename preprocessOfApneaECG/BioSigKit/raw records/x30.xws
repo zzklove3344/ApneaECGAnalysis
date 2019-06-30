@@ -1,0 +1,3 @@
+-r x30
+-a qrs
+-p http://physionet.org/physiobank/database/apnea-ecg/x30.xws

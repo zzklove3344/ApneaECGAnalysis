@@ -1,0 +1,3 @@
+-r x28
+-a qrs
+-p http://physionet.org/physiobank/database/apnea-ecg/x28.xws

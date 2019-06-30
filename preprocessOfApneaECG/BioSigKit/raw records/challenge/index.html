@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+
+    
+
+<title>Obtaining CinC Challenge 2000 Scores</title>
+<link rel="stylesheet" href="/pn/print.css" type="text/css" media="print">
+<link rel="stylesheet" href="/pn/css/physionet.css" media="all">
+
+<style type="text/css">
+#toc, #doi { margin-right: 1em; }
+
+ 
+ 
+#toc, #doi { background: #ecf3ff; border: solid 2px #38388B }
+.sf-menu > li > a { background:  #dfe9ff; }
+
+h1, h2, h3 { color: #38388B;
+             background: #dfe9ff; }
+a[href^='http://www.physionet.org']
+ { background: none; padding-right: 0; }
+</style>
+<!-- scripts from Rich Callogero, May 2016 -->
+<script src="/pn/js/jquery-1.11.3.min.js"></script>
+<script src="/pn/js/hoverIntent.js"></script>
+<script src="/pn/js/superfish.min.js"></script>
+
+<!--<script src="pn/js/debug.js"></script>-->
+<script src="/pn/js/accessible-superfish.js"></script>
+<script src="/pn/js/physionet.js"></script>
+<!-- -->
+<script type="text/javascript" src="/pn/js/jquery.tableofcontents.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('ul.sf-menu').superfish({ autoArrows: false });
+
+    if ($('h2').length) {
+      $('#tocwrapper').append('<ul id="toc"></ul>');
+      $('#toc').tableOfContents(null, { startLevel: 2 });
+
+    }
+
+  });
+</script>
+
+<script type="text/javascript" src="/users/shared/analytics.js"></script>
+
+</head>
+
+<body>
+
+  <header class="banner">
+    <a class="hide" href="#content">Skip to content</a>
+    <div style="width: 100%; position: absolute; top: 0;  z-index: 1; background-color: #38388B; min-width: 700px; padding: 0;">
+      <div class="topmenu" style="float: left; padding: 0.5em 2em 0.5em 0.5em;">
+	<!--	  <ul class="sf-menu sf-shadow sf-arrows"  >-->
+	<ul class="sf-menu">
+<li class="sfHover"><a style="text-align:center" href="https://physionet.org/" class="sf-with-ul"><span style="font-family: Georgia, Times, serif; font-variant: small-caps; padding-right: 4em; margin-right: 2em;"><b>PhysioNet</b></span><span class="arrow-down" role="presentation"></span></a>
+<!--<ul class="pntop">-->
+<ul>
+<li><a href="/news.shtml" class="sf-with-ul">What's New?<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/news.shtml">News from PhysioNet</a></li>
+<li><a href="/in-the-news.shtml">PhysioNet in the News</a></li>
+<li><a href="/training.shtml">Training opportunities</a></li>
+</ul></li>
+<li><a href="/site-map.shtml" class="sf-with-ul">
+<span style="font-family: Georgia, Times, serif; font-variant: small-caps;"><b>PhysioNet Library</b><span class="arrow-right" role="presentation"></span></span></a>
+<ul>
+<li><a href="/about.shtml">About PhysioNet</a></li>
+<li><a href="/challenge/" class="sf-with-ul">Challenges<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/challenge/2017/">2017</a></li>
+<li><a href="/challenge/2016/">2016</a></li>
+<li><a href="/challenge/2015/">2015</a></li>
+<li><a href="/challenge/2014/">2014</a></li>
+<li><a href="/challenge/">Previous challenges</a></li>
+</ul></li>
+<li><a href="/contributors/">Contributors</a></li>
+<li><a href="/pn-citations.shtml" class="sf-with-ul">Publications<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/publications/resource-pubs.shtml">from the PhysioNet team</a></li>
+<li><a href="/pn-citations.shtml">citing PhysioNet</a></li>
+<li><a href="/publications/#papers-with-data-and-software">with data and software</a></li>
+<li><a href="/publications/#papers-with-data">with data</a></li>
+<li><a href="/publications/#papers-with-software">with software</a></li>
+</ul></li>
+<li><a href="/tutorials/" class="sf-with-ul">Tutorials<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/tutorials/">Concise tutorials</a></li>
+<li><a href="/tutorials/#workshops">Workshops</a></li>
+<li><a href="/tutorials/#reference">Reference guides</a></li>
+<li><a href="/tutorials/#other">External Resources</a></li>
+</ul></li>
+<li><a href="/other-links.shtml">External Resources</a></li>
+</ul></li>
+<li class="pb"><a href="/physiobank/database/" class="sf-with-ul"> <span style="font-family: Georgia, Times, serif; font-variant: small-caps;"><b>PhysioBank</b><span class="arrow-right" role="presentation"></span></span></a>
+<ul>
+<li><a href="/physiobank/about.shtml">About PhysioBank</a></li>
+<li><a href="/physiobank/database/" class="sf-with-ul">Databases<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiobank/database/#clinical">Clinical Databases</a></li>
+<li><a href="/physiobank/database/#waveform" class="sf-with-ul">Waveform Databases<span class="arrow-right" role="presentation"></span></a>
+  <ul>
+    <li><a href="/physiobank/database/#multi">Multi-parameter</a></li>
+    <li><a href="/physiobank/database/#ecg">ECG</a></li>
+    <li><a href="/physiobank/database/#rr">RR intervals</a></li>
+    <li><a href="/physiobank/database/#gait">Gait and balance</a></li>
+    <li><a href="/physiobank/database/#neuro">Neuro- and myoelectric</a></li>
+    <li><a href="/physiobank/database/#image">Images</a></li>
+    <li><a href="/physiobank/database/#synthetic">Synthetic</a></li>
+  </ul>
+</li>
+</ul></li>
+<li><a href="/lightwave/">LightWAVE</a></li>
+<li><a href="/cgi-bin/ATM">PhysioBank ATM</a></li>
+<li><a href="/cgi-bin/pbsearch">PhysioBank Search</a></li>
+<li><a href="/physiobank/other.shtml">External Resources</a></li>
+</ul></li>
+<li class="pt"><a href="/physiotools/" class="sf-with-ul"> <span style="font-family: Georgia, Times, serif; font-variant: small-caps;"><b>PhysioToolkit</b><span class="arrow-right" role="presentation"></span></span></a>
+<ul>
+<li><a href="/physiotools/about.shtml">About PhysioToolkit</a></li>
+<li><a href="/physiotools/software-index.shtml" class="sf-with-ul">Software Index<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/software-index.shtml#pbdv" class="sf-with-ul">Data visualization<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/software-index.shtml#pbdv">PhysioBank</a></li>
+<li><a href="/physiotools/software-index.shtml#gpdv">General</a></li>
+</ul></li>
+<li><a href="/physiotools/software-index.shtml#pbdm">Data mining</a>
+</li><li><a href="/physiotools/software-index.shtml#fc" class="sf-with-ul">Data import/export<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/software-index.shtml#fc">Format conversion</a></li>
+<li><a href="/physiotools/software-index.shtml#cpcr">Record creation</a></li>
+</ul></li>
+<li><a href="/physiotools/software-index.shtml#deid">Deidentification</a></li>
+<li><a href="/physiotools/software-index.shtml#psp" class="sf-with-ul">Signal processing<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/software-index.shtml#psp">Physiologic</a></li>
+<li><a href="/physiotools/software-index.shtml#gsp">General</a></li>
+</ul></li>
+<li><a href="/physiotools/software-index.shtml#fdats" class="sf-with-ul">Time series analysis<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/software-index.shtml#fdats">Frequency-domain</a></li>
+<li><a href="/physiotools/software-index.shtml#nats">Nonlinear</a></li>
+<li><a href="/physiotools/software-index.shtml#hrv">Heart rate variability</a></li>
+</ul></li>
+<li><a href="/physiotools/software-index.shtml#pms">Models and simulation</a></li>
+<li><a href="/physiotools/software-index.shtml#lib" class="sf-with-ul">Software development<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/software-index.shtml#lib">Libraries and tools</a></li>
+<li><a href="/physiotools/software-index.shtml#eea">Device Evaluation</a></li>
+</ul></li>
+<li><a href="/physiotools/software-index.shtml#misc">Miscellaneous</a></li>
+</ul></li>
+<li><a href="/physiotools/matlab/" class="sf-with-ul">MATLAB software<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/matlab/wfdb-app-matlab/">WFDB Toolbox for ML</a></li>
+<li><a href="/physiotools/matlab/">Other</a></li>
+</ul></li>
+<li><a href="/physiotools/wfdb.shtml" class="sf-with-ul">WFDB software<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/wfdb-freebsd-quick-start.shtml">FreeBSD</a></li>
+<li><a href="/physiotools/wfdb-linux-quick-start.shtml">GNU/Linux</a></li>
+<li><a href="/physiotools/wfdb-darwin-quick-start.shtml">Mac OS X</a></li>
+<li><a href="/physiotools/wfdb-windows-quick-start.shtml">MS-Windows</a></li>
+<li><a href="/physiotools/wfdb-solaris-quick-start.shtml">Solaris</a></li>
+</ul></li>
+<li><a href="/physiotools/manuals.shtml" class="sf-with-ul">Manuals<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/wpg/">WFDB Programming</a></li>
+<li><a href="/physiotools/wag/">WFDB Applications</a></li>
+<li><a href="/physiotools/wug/">WAVE</a></li>
+<li><a href="/physiotools/rcvsim/doc/manual/">RCVSIM</a></li>
+<li><a href="/physiotools/plt/plt/html/">plt</a></li>
+<li><a target="other" class="plain" href="http://www.lulu.com/spotlight/physionet/">Bookstore</a></li>
+</ul></li>
+<li><a href="/physiotools/other.shtml">External Resources</a></li>
+</ul></li>
+<li class="pw"><a href="https://physionet.org/users/" class="sf-with-ul"> <span style="font-family: Georgia, Times, serif; font-variant: small-caps;"><b>PhysioNetWorks</b><span class="arrow-right" role="presentation"></span></span></a>
+<ul>
+<li><a href="https://physionet.org/users/">About PhysioNetWorks</a></li>
+<li><a href="https://physionet.org/users/home/"><em>User Home Page*</em></a></li>
+<li><a href="https://physionet.org/users/login.shtml">Login / Create an Account</a></li>
+<li><a href="https://physionet.org/works/"><em>Works in Progress*</em></a></li>
+<li><a href="https://physionet.org/users/help/data-sharing/">Data Sharing</a></li>
+<li><a href="https://physionet.org//users/help/pnw-howto.shtml">PhysioNetWorks Project Guide</a></li>
+<li><a href="https://physionet.org/users/help/">PhysioNetWorks Help</a></li>
+<li class="menu-note">* login required&nbsp;</li>
+</ul></li>
+<li><a href="/faq.shtml" class="sf-with-ul">Help<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/faq.shtml" class="sf-with-ul">FAQ<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/faq.shtml#topquestions">Top questions</a></li>
+<li><a href="/faq.shtml#general">General</a></li>
+<li><a href="/faq.shtml#sign-in">Sign-in and passwords</a></li>
+<li><a href="/faq.shtml#where-is">Where is ...?</a></li>
+<li><a href="/faq.shtml#downloading">Downloading</a></li>
+<li><a href="/faq.shtml#physiobank">PhysioBank</a></li>
+<li><a href="/faq.shtml#signals">Signals</a></li>
+<li><a href="/faq.shtml#annotations">Annotations</a></li>
+<li><a href="/faq.shtml#software">Software</a></li>
+<li><a href="/faq.shtml#help">Help!</a></li>
+</ul></li>
+<li><a href="/site-map.shtml">Site map</a></li>
+<li><a href="/tutorials/" class="sf-with-ul">Tutorials<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/tutorials/">Concise tutorials</a></li>
+<li><a href="/tutorials/#workshops">Workshops</a></li>
+<li><a href="/tutorials/#reference">Reference guides</a></li>
+<li><a href="/tutorials/#other">External Resources</a></li>
+</ul></li>
+<li><a href="/physiotools/manuals.shtml" class="sf-with-ul">Manuals<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/wpg/">WFDB Programming</a></li>
+<li><a href="/physiotools/wag/">WFDB Applications</a></li>
+<li><a href="/physiotools/wug/">WAVE</a></li>
+<li><a href="/physiotools/rcvsim/doc/manual/">RCVSIM</a></li>
+<li><a href="/physiotools/plt/plt/html/">plt</a></li>
+<li><a target="other" class="plain" href="http://www.lulu.com/spotlight/physionet/">Bookstore</a></li>
+</ul></li>
+<li><a href="/mirrors/" class="sf-with-ul">Mirrors<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="http://physionet.mit.edu/physiobank/database/apnea-ecg/challenge/">Cambridge, MA</a></li>
+<li><a href="https://physionet.nlm.nih.gov/physiobank/database/apnea-ecg/challenge/">Bethesda, MD</a></li>
+<li><a href="http://physionet.incor.usp.br/physiobank/database/apnea-ecg/challenge/">Sao Paulo, Brazil</a></li>
+<li><a href="http://physionet.ph.biu.ac.il/physiobank/database/apnea-ecg/challenge/">Ramat-Gan, Israel</a></li>
+<li><a href="http://physionet.cps.unizar.es/physiobank/database/apnea-ecg/challenge/">Zaragoza, Spain</a></li>
+<li><a href="http://physionet.fri.uni-lj.si/physiobank/database/apnea-ecg/challenge/">Ljubljana, Slovenia</a></li>
+<li><a href="http://physionet.comp.nus.edu.sg/physiobank/database/apnea-ecg/challenge/">NUS, Singapore</a></li>
+<li><a href="/mirrors/mirror-howto.shtml">Setting up a mirror</a></li>
+</ul></li>
+<li><a href="/citations.shtml">How to Cite</a></li>
+<li><a href="/guidelines.shtml">Contributing</a></li>
+<li><a href="/copying.shtml">Copying</a></li>
+<li><a href="/privacy.shtml">Privacy</a></li>
+</ul></li>
+</ul>
+
+</li></ul>
+
+	<!--	  </ul>-->
+      </div>
+      
+      <script src="/pn/breadcrumbs.js"></script>
+      
+      <div style="float: right; padding: 0.6em; margin: 0;" id="searchForm">
+	<script type="text/javascript">
+document.write("<form action=\"/search-results.shtml\"> " +
+	       "<input type=\"text\" name=\"q\" size=\"25\" /> " +
+	       "<input type=\"submit\" name=\"sa\" value=\"Search\" /> " +
+	       "</form>");
+</script>
+<noscript>
+<form action='https://www.google.com/search'><!-- id='searchForm'>-->
+  <div>
+    <input name='q' type='hidden' value='site:physionet.org' />
+    <input name='q' size='25' type='text' />
+    <input name='sa' type='submit' value='Search' />
+  </div>
+</form>
+</noscript>
+
+      </div>
+    </div>
+
+
+    <div class="pbanner"><!-- pbanner is set to display: none -->
+      from <b>PhysioNet</b>, the research resource for complex physiologic signals
+    </div>
+    <div  style="width: 100%; min-width: 700px; margin:  0 0 2.7em 0; background-color: transparent; padding: 0;">
+      <!-- provides space above h1 header, so it isn't hidden by banner -->
+      <div id="top"><!-- need nested div to link to top lands in right place --></div>      
+    </div>
+
+  </header>
+
+    <main>
+    
+        <h1 style="margin-top: 1.75em; padding-top: .4em;">Obtaining CinC Challenge 2000 Scores</h1>
+    
+
+    
+        <nav id="tocwrapper" style="padding: 1.5em 0 0 0; float: right;"> <!-- id to position toc added by KP, 6 July 2015 -->
+        </nav>
+    
+
+    
+    <a id="content" ></a>
+    <article id="page"><!-- added by KP, 12 June 2015 -->
+
+
+
+<h2>Preparing your entry</h2>
+
+<p>
+Your entry needs to be prepared in a special text format, which depends on
+the event you are entering:
+
+<ul>
+<li> For event 1 (Apnea Screening), download this <a
+href="template-test-1">template</a>,
+and replace the '?' characters with your classifications ('A', 'B', or 'C')
+for the 35 records in the test set (records x01-x35).
+
+<li> For event 2 (Quantification of Apnea), download this <a
+href="template-test-2">template</a>,
+and replace the '?' characters with your annotations ('A' or 'N') for each
+minute during each of the 35 records in the test set.
+</ul>
+
+<p>
+There are also templates for submitting results from the training set (records
+a01-a20, b01-b05, and c01-c10) for <a
+href="template-training-1">event 1</a>
+and <a
+href="template-training-2">event
+2</a>, so that you can obtain unofficial scores for these records as well.
+Awards will be made on the basis of results from the test set (records x01-x35)
+only.
+
+<p>
+If you have prepared annotation files in the same format as the <tt>*.apn</tt>
+files provided with the training set, you can download this <a
+href="distill.c">program</a>
+(in C source form, to be compiled with the <a href="/physiotools/wfdb.shtml">
+WFDB library</a>) that can convert them to the format of either of these
+templates.
+
+<h2>Submitting your entry for scoring</h2>
+
+<p>
+Please double-check your entry before submitting it to be sure it is in
+<strong>plain text</strong> format, exactly like the template files.
+<em>HTML-formatted entries will confuse the automated scorer and will not be
+scored.</em>
+
+<p>
+To submit your entry successfully, you will need:
+
+<ul> 
+<li> A web browser that supports HTTP uploads, such as Netscape 2.0 or
+ later, or MS Internet Explorer 4.0 or later.
+
+<li> A valid e-mail address that is known to us.  Please
+ <a href="/register.shtml">sign in</a> before submitting your entry.
+ (If you signed in on a previous visit, you do not need to sign in again.)
+ All entries are logged by date, time, and the e-mail address of the
+ entrant.
+
+ <p>
+ <b>Important:</b>  Your score will be sent by e-mail to the address you
+ specify.  Please be sure that your e-mail address is entered correctly,
+ or you won't be able to view your score.
+
+<li> A password.  If you don't yet have a password, or if you
+ have forgotten your password, go to the entry form (see below), fill
+ in only your e-mail address, click on the "Get password" button, and a
+ password will be sent to your e-mail address immediately.
+</ul>
+
+<p>
+After filling in your e-mail address and password on the 
+<a>entry form [link disabled]</a>,
+enter the name of the file that contains your correctly-formatted entry
+(you may use the <b>Browse</b> button to find it), indicate which
+event you wish to enter, which data set you are submitting results for,
+and click on <b>Upload entry</b>.
+
+<p>
+(If you wish to enter both events, you may do so, but you will need to
+submit your entry twice, once in each format, in this case.)
+
+<h2>Notes</h2>
+<p>
+If you are tempted to try submitting many entries in order to learn about
+the correct classifications, why not <a
+href="http://www.lizardpoint.com/fun/mastermind/mastmind.html"
+target="other">play MasterMind instead?</a>  Delivery of your score may be
+delayed if you submit more than one entry per event per day.
+
+<p>
+UNIX versions of Netscape, and possibly other browsers, will allow the
+user to specify a directory name in the <b>File to upload</b> field of the
+entry form, but the browser will not transmit anything in this case and will
+hang until the user interrupts it by clicking on <b>Stop</b>.  This behavior
+is a bug in the browser and cannot be detected or avoided by the PhysioNet web
+server.  Other browsers will detect and disallow attempts to upload
+directories.
+
+
+ 
+
+
+
+
+
+<div style="margin: 1.5em 0 0 ; clear: both;">
+<p style="text-align: center; vertical-align: middle; padding: 0; margin: .2em 0;
+	   background: #44a;">
+<a href="/contact-us.shtml" style="text-decoration:none; color: white;">
+<b>Questions and Comments</b></a>
+</p>
+</div>
+<table><tr><td style="padding: 0; vertical-align: top;">
+      <div style="float: left; padding: 1.5em 1em; font-size: 80%;  margin: 0.5em; margin: 0;">
+<p>If you would like help understanding, using, or downloading content, please see our <a href="/faq.shtml">Frequently Asked Questions</a>.
+</p>
+
+<p style="padding-top: .8em;">If you have any comments, feedback, or particular questions regarding this page, please send them to the <a href="/contact-us.shtml" target="_blank">webmaster</a>.</p>
+
+<p>Comments and issues can also be raised on PhysioNet's <a href="https://github.com/MIT-LCP/physionet" target="_blank">GitHub</a> page.
+</p>
+
+<p style="padding-top: .5em;">
+Updated 
+
+Thursday, 13 October 2016 at 14:27 EDT</p>
+</div></td>
+<td style="float: right; padding: 0;">
+<div class="funding" style="border: 2px solid #44a; border-radius: .5em; font-weight: 500; font-size: .9em; font-style: italic; line-height: 1.6; padding: 1.5em 2em 2em; margin: 1em .5em;">
+PhysioNet is supported by the <a href="http://www.nigms.nih.gov/" target="_blank">National Institute of General Medical Sciences (NIGMS)</a> and the <a href="https://www.nibib.nih.gov/" target="_blank">National Institute of Biomedical Imaging and Bioengineering (NIBIB)</a> under NIH grant number 2R01GM104987-09.
+</div> <!-- end funding credits -->
+
+
+</td></tr>
+</table>
+
+</article><!-- close article and main, which were  opened in header file -->
+</main>
+
+</body>
+</html>
+
+

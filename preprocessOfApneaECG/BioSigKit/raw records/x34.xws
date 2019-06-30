@@ -1,0 +1,3 @@
+-r x34
+-a qrs
+-p http://physionet.org/physiobank/database/apnea-ecg/x34.xws

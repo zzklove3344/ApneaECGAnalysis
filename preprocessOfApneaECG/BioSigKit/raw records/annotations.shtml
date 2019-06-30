@@ -1,0 +1,596 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+
+    
+
+<title>Apnea-ECG Database Annotations</title>
+<link rel="stylesheet" href="/pn/print.css" type="text/css" media="print">
+<link rel="stylesheet" href="/pn/css/physionet.css" media="all">
+
+<style type="text/css">
+#toc, #doi { margin-right: 1em; }
+
+ 
+ 
+#toc, #doi { background: #ecf3ff; border: solid 2px #38388B }
+.sf-menu > li > a { background:  #dfe9ff; }
+
+h1, h2, h3 { color: #38388B;
+             background: #dfe9ff; }
+a[href^='http://www.physionet.org']
+ { background: none; padding-right: 0; }
+</style>
+<!-- scripts from Rich Callogero, May 2016 -->
+<script src="/pn/js/jquery-1.11.3.min.js"></script>
+<script src="/pn/js/hoverIntent.js"></script>
+<script src="/pn/js/superfish.min.js"></script>
+
+<!--<script src="pn/js/debug.js"></script>-->
+<script src="/pn/js/accessible-superfish.js"></script>
+<script src="/pn/js/physionet.js"></script>
+<!-- -->
+<script type="text/javascript" src="/pn/js/jquery.tableofcontents.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('ul.sf-menu').superfish({ autoArrows: false });
+
+    if ($('h2').length) {
+      $('#tocwrapper').append('<ul id="toc"></ul>');
+      $('#toc').tableOfContents(null, { startLevel: 2 });
+
+    }
+
+  });
+</script>
+
+<script type="text/javascript" src="/users/shared/analytics.js"></script>
+
+</head>
+
+<body>
+
+  <header class="banner">
+    <a class="hide" href="#content">Skip to content</a>
+    <div style="width: 100%; position: absolute; top: 0;  z-index: 1; background-color: #38388B; min-width: 700px; padding: 0;">
+      <div class="topmenu" style="float: left; padding: 0.5em 2em 0.5em 0.5em;">
+	<!--	  <ul class="sf-menu sf-shadow sf-arrows"  >-->
+	<ul class="sf-menu">
+<li class="sfHover"><a style="text-align:center" href="https://physionet.org/" class="sf-with-ul"><span style="font-family: Georgia, Times, serif; font-variant: small-caps; padding-right: 4em; margin-right: 2em;"><b>PhysioNet</b></span><span class="arrow-down" role="presentation"></span></a>
+<!--<ul class="pntop">-->
+<ul>
+<li><a href="/news.shtml" class="sf-with-ul">What's New?<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/news.shtml">News from PhysioNet</a></li>
+<li><a href="/in-the-news.shtml">PhysioNet in the News</a></li>
+<li><a href="/training.shtml">Training opportunities</a></li>
+</ul></li>
+<li><a href="/site-map.shtml" class="sf-with-ul">
+<span style="font-family: Georgia, Times, serif; font-variant: small-caps;"><b>PhysioNet Library</b><span class="arrow-right" role="presentation"></span></span></a>
+<ul>
+<li><a href="/about.shtml">About PhysioNet</a></li>
+<li><a href="/challenge/" class="sf-with-ul">Challenges<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/challenge/2017/">2017</a></li>
+<li><a href="/challenge/2016/">2016</a></li>
+<li><a href="/challenge/2015/">2015</a></li>
+<li><a href="/challenge/2014/">2014</a></li>
+<li><a href="/challenge/">Previous challenges</a></li>
+</ul></li>
+<li><a href="/contributors/">Contributors</a></li>
+<li><a href="/pn-citations.shtml" class="sf-with-ul">Publications<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/publications/resource-pubs.shtml">from the PhysioNet team</a></li>
+<li><a href="/pn-citations.shtml">citing PhysioNet</a></li>
+<li><a href="/publications/#papers-with-data-and-software">with data and software</a></li>
+<li><a href="/publications/#papers-with-data">with data</a></li>
+<li><a href="/publications/#papers-with-software">with software</a></li>
+</ul></li>
+<li><a href="/tutorials/" class="sf-with-ul">Tutorials<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/tutorials/">Concise tutorials</a></li>
+<li><a href="/tutorials/#workshops">Workshops</a></li>
+<li><a href="/tutorials/#reference">Reference guides</a></li>
+<li><a href="/tutorials/#other">External Resources</a></li>
+</ul></li>
+<li><a href="/other-links.shtml">External Resources</a></li>
+</ul></li>
+<li class="pb"><a href="/physiobank/database/" class="sf-with-ul"> <span style="font-family: Georgia, Times, serif; font-variant: small-caps;"><b>PhysioBank</b><span class="arrow-right" role="presentation"></span></span></a>
+<ul>
+<li><a href="/physiobank/about.shtml">About PhysioBank</a></li>
+<li><a href="/physiobank/database/" class="sf-with-ul">Databases<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiobank/database/#clinical">Clinical Databases</a></li>
+<li><a href="/physiobank/database/#waveform" class="sf-with-ul">Waveform Databases<span class="arrow-right" role="presentation"></span></a>
+  <ul>
+    <li><a href="/physiobank/database/#multi">Multi-parameter</a></li>
+    <li><a href="/physiobank/database/#ecg">ECG</a></li>
+    <li><a href="/physiobank/database/#rr">RR intervals</a></li>
+    <li><a href="/physiobank/database/#gait">Gait and balance</a></li>
+    <li><a href="/physiobank/database/#neuro">Neuro- and myoelectric</a></li>
+    <li><a href="/physiobank/database/#image">Images</a></li>
+    <li><a href="/physiobank/database/#synthetic">Synthetic</a></li>
+  </ul>
+</li>
+</ul></li>
+<li><a href="/lightwave/">LightWAVE</a></li>
+<li><a href="/cgi-bin/ATM">PhysioBank ATM</a></li>
+<li><a href="/cgi-bin/pbsearch">PhysioBank Search</a></li>
+<li><a href="/physiobank/other.shtml">External Resources</a></li>
+</ul></li>
+<li class="pt"><a href="/physiotools/" class="sf-with-ul"> <span style="font-family: Georgia, Times, serif; font-variant: small-caps;"><b>PhysioToolkit</b><span class="arrow-right" role="presentation"></span></span></a>
+<ul>
+<li><a href="/physiotools/about.shtml">About PhysioToolkit</a></li>
+<li><a href="/physiotools/software-index.shtml" class="sf-with-ul">Software Index<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/software-index.shtml#pbdv" class="sf-with-ul">Data visualization<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/software-index.shtml#pbdv">PhysioBank</a></li>
+<li><a href="/physiotools/software-index.shtml#gpdv">General</a></li>
+</ul></li>
+<li><a href="/physiotools/software-index.shtml#pbdm">Data mining</a>
+</li><li><a href="/physiotools/software-index.shtml#fc" class="sf-with-ul">Data import/export<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/software-index.shtml#fc">Format conversion</a></li>
+<li><a href="/physiotools/software-index.shtml#cpcr">Record creation</a></li>
+</ul></li>
+<li><a href="/physiotools/software-index.shtml#deid">Deidentification</a></li>
+<li><a href="/physiotools/software-index.shtml#psp" class="sf-with-ul">Signal processing<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/software-index.shtml#psp">Physiologic</a></li>
+<li><a href="/physiotools/software-index.shtml#gsp">General</a></li>
+</ul></li>
+<li><a href="/physiotools/software-index.shtml#fdats" class="sf-with-ul">Time series analysis<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/software-index.shtml#fdats">Frequency-domain</a></li>
+<li><a href="/physiotools/software-index.shtml#nats">Nonlinear</a></li>
+<li><a href="/physiotools/software-index.shtml#hrv">Heart rate variability</a></li>
+</ul></li>
+<li><a href="/physiotools/software-index.shtml#pms">Models and simulation</a></li>
+<li><a href="/physiotools/software-index.shtml#lib" class="sf-with-ul">Software development<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/software-index.shtml#lib">Libraries and tools</a></li>
+<li><a href="/physiotools/software-index.shtml#eea">Device Evaluation</a></li>
+</ul></li>
+<li><a href="/physiotools/software-index.shtml#misc">Miscellaneous</a></li>
+</ul></li>
+<li><a href="/physiotools/matlab/" class="sf-with-ul">MATLAB software<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/matlab/wfdb-app-matlab/">WFDB Toolbox for ML</a></li>
+<li><a href="/physiotools/matlab/">Other</a></li>
+</ul></li>
+<li><a href="/physiotools/wfdb.shtml" class="sf-with-ul">WFDB software<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/wfdb-freebsd-quick-start.shtml">FreeBSD</a></li>
+<li><a href="/physiotools/wfdb-linux-quick-start.shtml">GNU/Linux</a></li>
+<li><a href="/physiotools/wfdb-darwin-quick-start.shtml">Mac OS X</a></li>
+<li><a href="/physiotools/wfdb-windows-quick-start.shtml">MS-Windows</a></li>
+<li><a href="/physiotools/wfdb-solaris-quick-start.shtml">Solaris</a></li>
+</ul></li>
+<li><a href="/physiotools/manuals.shtml" class="sf-with-ul">Manuals<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/wpg/">WFDB Programming</a></li>
+<li><a href="/physiotools/wag/">WFDB Applications</a></li>
+<li><a href="/physiotools/wug/">WAVE</a></li>
+<li><a href="/physiotools/rcvsim/doc/manual/">RCVSIM</a></li>
+<li><a href="/physiotools/plt/plt/html/">plt</a></li>
+<li><a target="other" class="plain" href="http://www.lulu.com/spotlight/physionet/">Bookstore</a></li>
+</ul></li>
+<li><a href="/physiotools/other.shtml">External Resources</a></li>
+</ul></li>
+<li class="pw"><a href="https://physionet.org/users/" class="sf-with-ul"> <span style="font-family: Georgia, Times, serif; font-variant: small-caps;"><b>PhysioNetWorks</b><span class="arrow-right" role="presentation"></span></span></a>
+<ul>
+<li><a href="https://physionet.org/users/">About PhysioNetWorks</a></li>
+<li><a href="https://physionet.org/users/home/"><em>User Home Page*</em></a></li>
+<li><a href="https://physionet.org/users/login.shtml">Login / Create an Account</a></li>
+<li><a href="https://physionet.org/works/"><em>Works in Progress*</em></a></li>
+<li><a href="https://physionet.org/users/help/data-sharing/">Data Sharing</a></li>
+<li><a href="https://physionet.org//users/help/pnw-howto.shtml">PhysioNetWorks Project Guide</a></li>
+<li><a href="https://physionet.org/users/help/">PhysioNetWorks Help</a></li>
+<li class="menu-note">* login required&nbsp;</li>
+</ul></li>
+<li><a href="/faq.shtml" class="sf-with-ul">Help<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/faq.shtml" class="sf-with-ul">FAQ<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/faq.shtml#topquestions">Top questions</a></li>
+<li><a href="/faq.shtml#general">General</a></li>
+<li><a href="/faq.shtml#sign-in">Sign-in and passwords</a></li>
+<li><a href="/faq.shtml#where-is">Where is ...?</a></li>
+<li><a href="/faq.shtml#downloading">Downloading</a></li>
+<li><a href="/faq.shtml#physiobank">PhysioBank</a></li>
+<li><a href="/faq.shtml#signals">Signals</a></li>
+<li><a href="/faq.shtml#annotations">Annotations</a></li>
+<li><a href="/faq.shtml#software">Software</a></li>
+<li><a href="/faq.shtml#help">Help!</a></li>
+</ul></li>
+<li><a href="/site-map.shtml">Site map</a></li>
+<li><a href="/tutorials/" class="sf-with-ul">Tutorials<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/tutorials/">Concise tutorials</a></li>
+<li><a href="/tutorials/#workshops">Workshops</a></li>
+<li><a href="/tutorials/#reference">Reference guides</a></li>
+<li><a href="/tutorials/#other">External Resources</a></li>
+</ul></li>
+<li><a href="/physiotools/manuals.shtml" class="sf-with-ul">Manuals<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="/physiotools/wpg/">WFDB Programming</a></li>
+<li><a href="/physiotools/wag/">WFDB Applications</a></li>
+<li><a href="/physiotools/wug/">WAVE</a></li>
+<li><a href="/physiotools/rcvsim/doc/manual/">RCVSIM</a></li>
+<li><a href="/physiotools/plt/plt/html/">plt</a></li>
+<li><a target="other" class="plain" href="http://www.lulu.com/spotlight/physionet/">Bookstore</a></li>
+</ul></li>
+<li><a href="/mirrors/" class="sf-with-ul">Mirrors<span class="arrow-right" role="presentation"></span></a>
+<ul>
+<li><a href="http://physionet.mit.edu/physiobank/database/apnea-ecg/annotations.shtml">Cambridge, MA</a></li>
+<li><a href="https://physionet.nlm.nih.gov/physiobank/database/apnea-ecg/annotations.shtml">Bethesda, MD</a></li>
+<li><a href="http://physionet.incor.usp.br/physiobank/database/apnea-ecg/annotations.shtml">Sao Paulo, Brazil</a></li>
+<li><a href="http://physionet.ph.biu.ac.il/physiobank/database/apnea-ecg/annotations.shtml">Ramat-Gan, Israel</a></li>
+<li><a href="http://physionet.cps.unizar.es/physiobank/database/apnea-ecg/annotations.shtml">Zaragoza, Spain</a></li>
+<li><a href="http://physionet.fri.uni-lj.si/physiobank/database/apnea-ecg/annotations.shtml">Ljubljana, Slovenia</a></li>
+<li><a href="http://physionet.comp.nus.edu.sg/physiobank/database/apnea-ecg/annotations.shtml">NUS, Singapore</a></li>
+<li><a href="/mirrors/mirror-howto.shtml">Setting up a mirror</a></li>
+</ul></li>
+<li><a href="/citations.shtml">How to Cite</a></li>
+<li><a href="/guidelines.shtml">Contributing</a></li>
+<li><a href="/copying.shtml">Copying</a></li>
+<li><a href="/privacy.shtml">Privacy</a></li>
+</ul></li>
+</ul>
+
+</li></ul>
+
+	<!--	  </ul>-->
+      </div>
+      
+      <script src="/pn/breadcrumbs.js"></script>
+      
+      <div style="float: right; padding: 0.6em; margin: 0;" id="searchForm">
+	<script type="text/javascript">
+document.write("<form action=\"/search-results.shtml\"> " +
+	       "<input type=\"text\" name=\"q\" size=\"25\" /> " +
+	       "<input type=\"submit\" name=\"sa\" value=\"Search\" /> " +
+	       "</form>");
+</script>
+<noscript>
+<form action='https://www.google.com/search'><!-- id='searchForm'>-->
+  <div>
+    <input name='q' type='hidden' value='site:physionet.org' />
+    <input name='q' size='25' type='text' />
+    <input name='sa' type='submit' value='Search' />
+  </div>
+</form>
+</noscript>
+
+      </div>
+    </div>
+
+
+    <div class="pbanner"><!-- pbanner is set to display: none -->
+      from <b>PhysioNet</b>, the research resource for complex physiologic signals
+    </div>
+    <div  style="width: 100%; min-width: 700px; margin:  0 0 2.7em 0; background-color: transparent; padding: 0;">
+      <!-- provides space above h1 header, so it isn't hidden by banner -->
+      <div id="top"><!-- need nested div to link to top lands in right place --></div>      
+    </div>
+
+  </header>
+
+    <main>
+    
+        <h1 style="margin-top: 1.75em; padding-top: .4em;">Apnea-ECG Database Annotations</h1>
+    
+
+    
+        <nav id="tocwrapper" style="padding: 1.5em 0 0 0; float: right;"> <!-- id to position toc added by KP, 6 July 2015 -->
+        </nav>
+    
+
+    <aside id='doi'>DOI for<br> Apnea-ECG Database Annotations:<p>doi:10.13026/C23W2R</p></aside>
+    <a id="content" ></a>
+    <article id="page"><!-- added by KP, 12 June 2015 -->
+
+
+
+<p>
+Two sets of annotations are supplied with the data for the
+<a href="/challenge/2000/">Computers in Cardiology Challenge
+2000</a>.  These can be identified by the file name suffixes <tt>.apn</tt>
+and <tt>.qrs</tt>.
+
+<p>
+The <tt>.apn</tt> files contain apnea annotations.  These are currently
+available for the 35 records in the learning set only; those for the test set
+will be posted here after the conclusion of the Challenge in September.  (To
+view these annotations, use <a
+href="/physiotools/wag/rdann-1.htm"><tt>rdann</tt></a> to convert the binary
+annotation files into text.  If you have not used <tt>rdann</tt> previously,
+see the detailed instructions <a href="#rdann-notes">below.</a>) These
+annotations have been prepared on the basis of expert visual review of
+simultaneously recorded respiration and oxygen saturation signals.  These
+additional signals can be studied for 8 records (a01er - a04er, b01er, and
+c01er - c03er; these contain the same ECG data as a01 - a04, b01, and c01 -
+c03, respectively).
+
+<p>
+When these files were first posted here, the following (incorrect) description
+of the <tt>.apn</tt> annotation files was also posted:
+
+<blockquote>
+In these files, an "A" annotation indicates that apnea occurs during the
+<em>following</em> one-minute interval, and an "N" annotation indicates that
+there is no apnea during the following one-minute interval.
+</blockquote>
+
+<p>
+Following is a corrected description:
+
+<blockquote>
+In each of these files, the first annotation is placed at 0 seconds and is
+associated with the following one-minute interval (i.e., 0-59.99 seconds
+elapsed time from the beginning of the record), the second annotation is placed
+at 60 seconds and is associated with the next one-minute interval (60-119.99
+seconds), etc.  Each "A" annotation indicates that apnea was in progress <em>at
+the beginning of the associated minute</em>; each "N" annotation indicates that
+apnea was not in progress at the beginning of the associated minute.  The
+diagram below may help to clarify this:
+
+<pre>
+|       |       |       |       |       |       |       |       |
+        ****************              ********     ********
+N       A       A       N       N       A       N       A       N
+</pre>
+
+In this diagram, elapsed time is represented by distance from the left edge.
+The '*'s mark apneic periods, the '|'s mark the times of the <tt>.apn</tt>
+annotations (0, 60, 120, ... seconds), and the "N"s and "A"s are the "no apnea"
+and "apnea" annotations.
+</blockquote>
+
+<p>
+The <tt>.qrs</tt> files were created using <a
+href="/physiotools/wag/sqrs-1.htm"><tt>sqrs125</tt></a>, initially with its
+default threshold (250).  In these files, all detected beats (including any
+abnormal beats that were detected) are marked with "N" annotations, and
+QRS-like artifacts are marked with "|" annotations.  Based on visual review of
+the heart rate time series (using <a
+href="/physiotools/wag/hrfft-1.htm"><tt>hrplot</tt></a>), and review of
+selected portions of the original ECGs and annotations (using <a
+href="/physiotools/wag/wave-1.htm">WAVE</a>), <tt>sqrs125</tt> was run again
+using its <tt>-m</tt> option to select lower thresholds on some recordings (in
+some cases, more than once) to obtain better detection of low-amplitude QRS
+complexes.  In no case were the annotations hand-edited.  Only small numbers of
+annotations were inspected in each recording to determine if the threshold had
+been set appropriately.  If you wish to experiment further with
+<tt>sqrs125</tt> or with your own QRS detector, it may be helpful to know
+exactly how the <tt>.qrs</tt> files provided here were made, so here are the
+commands that are needed to do so:
+
+<pre>
+sqrs125 -r a01
+sqrs125 -r a02 -m 125
+sqrs125 -r a03
+sqrs125 -r a04
+sqrs125 -r a05
+sqrs125 -r a06 -m 125
+sqrs125 -r a07
+sqrs125 -r a08
+sqrs125 -r a09
+sqrs125 -r a10
+sqrs125 -r a11
+sqrs125 -r a12 -m 125
+sqrs125 -r a13
+sqrs125 -r a14
+sqrs125 -r a15
+sqrs125 -r a16
+sqrs125 -r a17 -m 100
+sqrs125 -r a18
+sqrs125 -r a19
+sqrs125 -r a20 -m 125
+sqrs125 -r b01
+sqrs125 -r b02 -m 125
+sqrs125 -r b03 -m 125
+sqrs125 -r b04 -m 75
+sqrs125 -r b05 -m 125
+sqrs125 -r b06
+sqrs125 -r b07
+sqrs125 -r b08
+sqrs125 -r b09
+sqrs125 -r b10
+sqrs125 -r c01 -m 125
+sqrs125 -r c02
+sqrs125 -r c03
+sqrs125 -r c04 -m 125
+sqrs125 -r c05 -m 125
+sqrs125 -r c06 -m 125
+sqrs125 -r c07 -m 100
+sqrs125 -r c08 -m 100
+sqrs125 -r c09
+sqrs125 -r c10
+sqrs125 -r x01
+sqrs125 -r x02
+sqrs125 -r x03
+sqrs125 -r x04
+sqrs125 -r x05
+sqrs125 -r x06
+sqrs125 -r x07
+sqrs125 -r x08
+sqrs125 -r x09
+sqrs125 -r x10
+sqrs125 -r x11
+sqrs125 -r x12
+sqrs125 -r x13
+sqrs125 -r x14 -m 125
+sqrs125 -r x15 -m 125
+sqrs125 -r x16
+sqrs125 -r x17 -m 50
+sqrs125 -r x18
+sqrs125 -r x19
+sqrs125 -r x20
+sqrs125 -r x21
+sqrs125 -r x22
+sqrs125 -r x23
+sqrs125 -r x24
+sqrs125 -r x25
+sqrs125 -r x26
+sqrs125 -r x27
+sqrs125 -r x28
+sqrs125 -r x29 -m 125
+sqrs125 -r x30
+sqrs125 -r x31
+sqrs125 -r x32
+sqrs125 -r x33 -m 125
+sqrs125 -r x34 -m 125
+sqrs125 -r x35
+</pre>
+
+<a name="rdann-notes"><h2>How to use <tt>rdann</tt></h2></a>
+
+<p>
+<strong>Install <tt>rdann</tt>:</strong>
+
+<p>
+If you haven't already downloaded and installed <tt>rdann</tt>, do so now.
+Search for <tt>rdann</tt> (type <tt>rdann</tt> into the text box above
+the <em>Search</em> button in the left margin of this page, then click
+on <em>Search</em>), and you will find the C-language source as well
+as a UNIX-style manual page that describes <tt>rdann</tt>'s options
+in more detail than below.  All versions of <tt>rdann</tt> are compiled from
+the same source, so you can create a version for your operating system,
+provided that you have a C compiler.  If you do this, you will also need to
+download and compile the sources for the
+<a href="/physiotools/wfdb.shtml">WFDB library</a> used by <tt>rdann</tt>.
+<a href="/physiotools/binaries">Binaries</a> (executable versions of the
+program) for several popular operating systems can also be downloaded.  Note
+that <tt>rdann</tt> is a text-mode application;  users of MS-Windows can run
+the MS-DOS version of <tt>rdann</tt> in a DOS window.
+
+<p>
+<strong>Locate the files you need:</strong>
+
+<p>
+Each of the data files has a <em>record name</em> (the first part of the
+file name, before the '.') and a suffix (the second part of the file name,
+following the '.').  For example, the file <tt>a19.apn</tt> has the record
+name <tt>a19</tt> and the suffix <tt>apn</tt>.
+
+<p>
+Files with <tt>qrs</tt> or <tt>apn</tt> suffixes are binary annotation files.
+For these files, the suffix is the <em>annotator name</em>.  Files with the
+suffix <tt>hea</tt> are (text) header files containing information about the
+format of the related files, and those with the suffix <tt>dat</tt> are binary
+signal files (containing digitized samples of the ECG and other signals).
+
+<p>
+In order to read an annotation file successfully, you will need to download
+both the annotation file itself and the associated header file.  For example,
+to read <tt>a19.apn</tt>, download <tt>a19.apn</tt> and <tt>a19.hea</tt>.
+(The Linux version of <tt>rdann</tt> can act as an HTTP client and can read the
+files directly from the PhysioNet server without the need to store them
+locally.  If you have compiled your own version of the WFDB library with
+<a href="/physiotools/wpg/wpg_43.htm">NETFILES</a> support, your version
+of <tt>rdann</tt> will also have this capability.)
+
+<p>
+<strong>Use <tt>rdann</tt> to convert binary annotations to text:</strong>
+
+<p>
+Once you know the <em>record name</em> and the <em>annotator name</em>, you can
+use <tt>rdann</tt> to read the file.  For example, to read <tt>a19.apn</tt>,
+use the command
+
+<pre>
+     rdann -r a19 -a apn -f 0
+</pre>
+
+<p>
+This command will produce output on the screen that begins:
+
+<pre>
+    0:00.000        0     N    0    0    0
+    1:00.000     6000     A    0    0    0
+    2:00.000    12000     A    0    0    0
+    3:00.000    18000     A    0    0    0
+    4:00.000    24000     A    0    0    0
+    5:00.000    30000     A    0    0    0
+    6:00.000    36000     A    0    0    0
+    7:00.000    42000     N    0    0    0
+    8:00.000    48000     N    0    0    0
+    9:00.000    54000     A    0    0    0
+   10:00.000    60000     A    0    0    0
+</pre>
+
+(The '-f 0' option was not required by the version of rdann that was
+available when this page was written.  If omitted, the first annotation,
+at 0:00.000, will not appear in the output.)
+
+<p>
+To capture the output of <tt>rdann</tt> in a file, redirect it using a command
+such as:
+
+<pre>
+     rdann -r a19 -a apn -f 0 &gt;<font color=blue><em>textfile</em></font>
+</pre>
+
+In this command, replace <font color=blue><tt><em>textfile</em></tt></font>
+with any desired file name.  This method works under MS-DOS/Windows
+as well as under all versions of UNIX.
+
+<p>
+Each line of <tt>rdann</tt>'s output corresponds to one annotation.  The first
+two columns indicate the elapsed time (i.e., the interval) from the beginning
+of the record to the sample marked by the annotation. (Column 1 gives this in
+hours, minutes, and seconds, and column 2 gives the same information in sample
+intervals.  In these records, one sample interval equals 10 milliseconds.)  The
+third column contains a mnemonic code for the annotation type.  As noted above,
+in the <tt>apn</tt> files, these codes are <tt>A</tt> for "apnea" and
+<tt>N</tt> for "no apnea".  In the <tt>qrs</tt> files, the codes are <tt>N</tt>
+for a QRS complex and <tt>|</tt> for a QRS-like artifact.  In these annotation
+files, the remaining columns can be ignored.
+
+<p>
+The sample output shown above can therefore be interpreted thus: during the
+first minute (beginning at 0:00.000, or sample number 0) there is no apnea
+(<tt>N</tt>); during each of the next several one-minute periods (beginning at
+1:00.000, 2:00.000, 3:00.000, ...), there is apnea (<tt>A</tt>).
+
+<!-- footer.shtml for PhysioNet pages -->
+
+
+
+</div>
+<div class="footer">
+<table width="100%" style="margin: 0;">
+<tr>
+<td style="text-align: center; vertical-align: middle; padding: 0;
+	   background: #38388B;">
+<a href="http://physionet.org/cgi-bin/feedback" style="text-decoration:none">
+<font color="white"><b>Send feedback about this page to PhysioNet</b></font></a>
+</td>
+</tr>
+</table>
+<table width="100%" style="margin: 0;">
+<tr>
+<td style="display: inline-block; padding: 0; vertical-align: top; font-size: 80%; margin: 2em; max-width: 40%">
+Your comments and suggestions are welcome. Please send them to <a href="mailto:webmaster@physionet.org?subject=http://www.physionet.org/physiobank/database/apnea-ecg/annotations.shtml">
+<tt>webmaster@physionet.org</tt></a>. 
+<br><br>
+For general enquiries about PhysioNet and its contents and usage, please see our <a href="/faq.shtml">FAQ</a>.
+<br><br>
+Updated 
+
+Thursday, 13 October 2016 at 14:30 EDT
+</td>
+<td style="display: inline-block; margin: 0 1em 0 auto; max-width: 45%;">
+<br>PhysioNet is supported by the <a href="http://www.nigms.nih.gov/">National Institute of General Medical Sciences (NIGMS)</a> and the <a href="https://www.nibib.nih.gov/">National Institute of Biomedical Imaging and Bioengineering (NIBIB)</a> under NIH grant number 2R01GM104987-09.
+</td>
+</tr>
+</table>
+</div>
+</body></html>
+
+</body>
+</html>

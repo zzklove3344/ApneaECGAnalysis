@@ -1,0 +1,3 @@
+-r x22
+-a qrs
+-p http://physionet.org/physiobank/database/apnea-ecg/x22.xws
